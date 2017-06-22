@@ -1,0 +1,39 @@
+﻿        
+@model Vidly.ViewModels.RandomMovieViewModel
+@{
+    
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Movie.Name</h2>
+
+@* to display list of customer write list outside foreach block  *@
+
+@* if nobady rent these movie we can write message inside  *@
+@if (Model.Customers.Count == 0)
+{
+    <p> No  one has rented these movie before.</p>
+   
+    //also you can use text sytax and razer will be understand that 
+    
+    
+}
+
+else
+{
+    <ul>
+    
+        @* To render list of customes we can use for each block  *@
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name </li> //you can write in this block c sharp code or html code
+        }
+    </ul>
+}
+
+
+
+    
+    
+   
